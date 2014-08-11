@@ -23,6 +23,9 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider',function(dec
     'default': base+'default.html'
   },[
     function(form){
+      form.labelsize = "col-md-4";
+      form.inputsize = "col-md-8";
+
       if (form.readonly && form.key && form.type !== 'fieldset') {
         return base+'readonly.html';
       }
@@ -51,7 +54,7 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider',function(dec
   return {
     transclude: true,
     scope: true,
-    templateUrl: 'directives/decorators/bootstrap/fieldset-trcl.html',
+    templateUrl: 'directives/decorators/bootstrap-lindix/fieldset-trcl.html',
     link: function(scope,element,attrs) {
       scope.title = scope.$eval(attrs.title);
     }
