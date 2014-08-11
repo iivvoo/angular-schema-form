@@ -15,7 +15,7 @@ function(schemaFormProvider,  schemaFormDecoratorsProvider){
   schemaFormProvider.defaults.string.unshift(datepicker);
 
   //Add to the bootstrap directive
-  schemaFormDecoratorsProvider.addMapping('bootstrapDecorator','datepicker','directives/decorators/bootstrap/datepicker/datepicker.html');
+  schemaFormDecoratorsProvider.addMapping('bootstrapDecorator','datepicker','directives/decorators/bootstrap-lindix/datepicker/datepicker.html');
   schemaFormDecoratorsProvider.createDirective('datepicker','directives/decorators/bootstrap/datepicker/datepicker.html');
 
 }]);
