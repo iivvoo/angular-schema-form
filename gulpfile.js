@@ -12,7 +12,7 @@ var streamqueue = require('streamqueue');
 gulp.task('bootstrap', function() {
   var stream = streamqueue({ objectMode: true });
   stream.queue(
-              gulp.src("./src/directives/decorators/bootstrap/*.html")
+              gulp.src("./src/directives/decorators/bootstrap-lindix/*.html")
                   .pipe(minifyHtml({
                       empty: true,
                       spare: true,
@@ -20,13 +20,13 @@ gulp.task('bootstrap', function() {
                   }))
                   .pipe(templateCache({
                       module: "schemaForm",
-                      root: "directives/decorators/bootstrap/"
+                      root: "directives/decorators/bootstrap-lindix/"
                   }))
     );
-    stream.queue(gulp.src('./src/directives/decorators/bootstrap/*.js'));
+    stream.queue(gulp.src('./src/directives/decorators/bootstrap-lindix/bootstrap-decorator-lindix.js'));
 
     stream.done()
-          .pipe(concat('bootstrap-decorator.min.js'))
+          .pipe(concat('bootstrap-decorator-lindix.min.js'))
           .pipe(uglify())
           .pipe(gulp.dest("./dist/"));
 
@@ -35,7 +35,7 @@ gulp.task('bootstrap', function() {
 gulp.task('bootstrap-datepicker', function() {
   var stream = streamqueue({ objectMode: true });
   stream.queue(
-              gulp.src("./src/directives/decorators/bootstrap/datepicker/*.html")
+              gulp.src("./src/directives/decorators/bootstrap-lindix/datepicker/*.html")
                   .pipe(minifyHtml({
                       empty: true,
                       spare: true,
@@ -43,10 +43,10 @@ gulp.task('bootstrap-datepicker', function() {
                   }))
                   .pipe(templateCache({
                       module: "schemaForm",
-                      root: "directives/decorators/bootstrap/datepicker/"
+                      root: "directives/decorators/bootstrap-lindix/datepicker/"
                   }))
     );
-    stream.queue(gulp.src('./src/directives/decorators/bootstrap/datepicker/*.js'));
+    stream.queue(gulp.src('./src/directives/decorators/bootstrap-lindix/datepicker/*.js'));
 
     stream.done()
           .pipe(concat('bootstrap-datepicker.min.js'))
